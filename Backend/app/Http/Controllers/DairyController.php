@@ -32,10 +32,10 @@ class DairyController extends Controller
     {
             $event = Event::find($id);
 
-            $event->title = $req->title;
-            $event->description = $req->description;
-            $event->importance = $req->importance;
-            $event->save();
+            // $event->title = $req->title;
+            // $event->description = $req->description;
+            // $event->importance = $req->importance;
+            // $event->save();
             return response([
                 'event' => $event
             ]);
