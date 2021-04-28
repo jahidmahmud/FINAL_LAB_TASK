@@ -22,9 +22,9 @@ export default function AddEvent() {
                             <td>Importance</td>
                             <td>
                                 <select name="importance">
-                                    <option value="high">High</option>
-                                    <option value="moderate">Moderate</option>
-                                    <option value="less">Less</option>
+                                    <option value="High">High</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="Less">Less</option>
                                 </select>
                             </td>
                         </tr>

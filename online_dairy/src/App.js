@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
 import Nav from './Component/Nav';
 import AddEvent from './Component/AddEvent';
 import List from './Component/List';
 import EditEvent from './Component/EditEvent';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+axios.defaults.baseURL = 'http://localhost:8000/';
 
 function App() {
   return (
@@ -24,8 +26,8 @@ function App() {
           <Route path="/list">
             <List />
           </Route>
-          <Route path="/edit">
-            <EditEvent />
+          <Route path="/edit/:id" children={<EditEvent />}>
+            
           </Route>
           <Route path="*">
             <h1>404 not found</h1>
