@@ -28,10 +28,10 @@ export default function EditEvent() {
                                 </select>
                             </td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>Date</td>
                             <td><input type="date" name="date" /> </td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <td></td>
                             <td><button type="submit">Add</button></td>

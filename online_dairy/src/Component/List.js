@@ -8,22 +8,21 @@ export default function List() {
         getData();
         }, []);
   async function getData() {
-    const getEvents = async () => {
+    const get = async () => {
       const response = await axios
         .get("events")
         .catch((error) => console.log(error.resp));
         setData(response.data.event);
     };
-    getEvents();
+    get();
   }
-  deleteExpense(id) {
-    axios.delete('http://localhost:8000/events/delete/' + id)
-        .then((res) => {
-            console.log('Expense removed deleted!')
-        }).catch((error) => {
-            console.log(error)
-        });
-    }
+  async function deleteEvent(id) {
+    await axios
+        .delete("events/delete/"+id)
+        .catch((error) => console.log(error.resp));
+    getData();
+  }
+ 
     return (
         <div>
         <h1>Event List</h1>
@@ -48,7 +47,7 @@ export default function List() {
                         <Link to={"edit/" + item.id} key={item.id}>
                             Edit
                         </Link>
-                        <button onClick={()=>{deleteExpense(item.id)}}>Delete</button>   
+                        <button onClick={() => deleteEvent(item.id)}>Delete</button>   
                         </td>
                       </tr>
                     ))}
